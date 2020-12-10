@@ -1,6 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 
+import './Navbar.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 const Navbar = () => {
@@ -27,6 +28,9 @@ const Navbar = () => {
                             </li>
                             <li className="nav-item">
                                 <Link className="nav-link" to="/customer">Customer</Link>
+                            </li>
+                            <li className="nav-item">
+                                <Link className="nav-link" to="/work">Work </Link>
                             </li>
                             <li className="nav-item">
                                 <Link className="nav-link" to="/appointment">Appointment</Link>
