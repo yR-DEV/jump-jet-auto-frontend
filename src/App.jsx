@@ -12,14 +12,21 @@ import Employee from './components/employee/Employee';
 import Vehicle from './components/vehicle/Vehicle';
 import Customer from './components/customer/Customer';
 import Appointment from './components/appointment/Appointment';
-import Work from './components/work/Work';
+// import JobCard from './components/jobcard/JobCard';
+import ListJobCardsComponent from './components/jobcard/ListJobCardsComponent';
+import CreateJobCardComponent from './components/jobcard/CreateJobCardComponent';
 
 const App = () => {
 
   const [state, setState] = useState([]);
 
   const setEmployeeToAppState = (employeeId) => {
-    console.log('we in main app with employeeId: ' + employeeId);
+    console.log('-------------------------------------------');
+    console.log('we in main app with  ');
+    console.log('EMPLOYEE ID NUMBER: ' + employeeId);
+    console.log('this will be set in state and work progression of creating job card');
+    console.log('will continue below');
+    console.log('--------------------------------------------');
   }
 
   return (
@@ -40,11 +47,17 @@ const App = () => {
         <Route path="/appointment">
           <Appointment />
         </Route>
-        <Route path="/work">
-          <Work />
-        </Route>
+        {/* <Route path="/jobcard">
+          <JobCard />
+        </Route> */}
         <Route exact path="/">
           <Landing />
+        </Route>
+        <Route path="/jobcards">
+          <ListJobCardsComponent />
+        </Route>
+        <Route path="/add-jobcard">
+          <CreateJobCardComponent />
         </Route>
       </Router>
     </div>
