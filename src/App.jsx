@@ -18,6 +18,10 @@ const App = () => {
 
   const [state, setState] = useState([]);
 
+  const setEmployeeToAppState = (employeeId) => {
+    console.log('we in main app with employeeId: ' + employeeId);
+  }
+
   return (
     <div className="App">
       <Router>
@@ -25,7 +29,7 @@ const App = () => {
         <Header />
 
         <Route path="/employee">
-          <Employee />
+          <Employee setEmployeeToAppState={setEmployeeToAppState}/>
         </Route>
         <Route path="/vehicle">
           <Vehicle />
