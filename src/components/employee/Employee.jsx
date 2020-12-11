@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 import axios from 'axios';
 
 import EmployeeList from './EmployeeList';
@@ -55,13 +56,15 @@ const Employee = (props) => {
                 <h1 className="container">Welcome to the Employee Service!</h1>
                 <div className="row">
                     <div className="col-4">
-                        <button className="btn btn-primary" onClick={handleManageEmployee}>Manage Employees</button>
+                        <button className="btn btn-primary">Manage Employees</button>
                     </div>
                     <div className="col-4">
                         <button className="btn btn-primary" >Select Employee For Job Card</button>
                     </div>
                     <div className="col-4">
-                        <button className="btn btn-primary" onClick={showEmployeeForm}>Add a New Employee</button>
+                        <Link to="/add-employee">
+                            <button className="btn btn-primary">Add a New Employee</button>
+                        </Link>
                     </div>
                 </div>
             </div>
@@ -71,7 +74,6 @@ const Employee = (props) => {
                             handleEmployeeSelect={handleEmployeeSelect}
                             deleteAPIAxios={deleteAPIAxios}
             />
-            <EmployeeForm />
         </div>
     )
 }

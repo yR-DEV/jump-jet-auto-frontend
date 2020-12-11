@@ -35,7 +35,7 @@ class ListJobCardsComponent extends Component {
   }
   render() {
     return (
-      <div>
+      <div className="jumbotron container">
         <h2 className="text-center"> JobCard (List of Tasks) </h2>
         <div className="row">
           <Link to="/add-jobcard">

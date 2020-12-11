@@ -9,10 +9,11 @@ import './App.css';
 import Header from './components/navbar/Navbar';
 import Landing from './components/landing/Landing';
 import Employee from './components/employee/Employee';
-import Vehicle from './components/vehicle/Vehicle';
+import EmployeeForm from './components/employee/EmployeeForm';
+import VehicleService from './components/vehicle/VehicleService';
+import AddVehicle from './components/vehicle/AddVehicle';
 import Customer from './components/customer/Customer';
 import Appointment from './components/appointment/Appointment';
-// import JobCard from './components/jobcard/JobCard';
 import ListJobCardsComponent from './components/jobcard/ListJobCardsComponent';
 import CreateJobCardComponent from './components/jobcard/CreateJobCardComponent';
 
@@ -34,12 +35,17 @@ const App = () => {
       <Router>
         {/* Links to pages located in the Header Component */}
         <Header />
-
-        <Route path="/employee">
+        <Route path="/employees">
           <Employee setEmployeeToAppState={setEmployeeToAppState}/>
         </Route>
-        <Route path="/vehicle">
-          <Vehicle />
+        <Route path="/add-employee">
+          <EmployeeForm />
+        </Route>
+        <Route path="/vehicles">
+          <VehicleService />
+        </Route>
+        <Route path="/add-vehicle">
+          <AddVehicle />
         </Route>
         <Route path="/customer">
           <Customer />
@@ -47,17 +53,14 @@ const App = () => {
         <Route path="/appointment">
           <Appointment />
         </Route>
-        {/* <Route path="/jobcard">
-          <JobCard />
-        </Route> */}
-        <Route exact path="/">
-          <Landing />
-        </Route>
         <Route path="/jobcards">
           <ListJobCardsComponent />
         </Route>
         <Route path="/add-jobcard">
           <CreateJobCardComponent />
+        </Route>
+        <Route exact path="/">
+          <Landing />
         </Route>
       </Router>
     </div>

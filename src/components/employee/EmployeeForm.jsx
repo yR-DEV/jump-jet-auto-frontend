@@ -1,16 +1,21 @@
 import React from 'react';
+import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 
 import './Employee.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 const EmployeeForm = () => {
 
+    const handleSubmit = (event) => {
+        event.preventDefault();
+    }
+
     return (
         <div className="container">
             <div className="jumbotron">
                 <h1>New Employee Form</h1>
                 <div className="container-sm">
-                    <form>
+                    <form onSubmit={handleSubmit}>
                         <div className="mb-3">
                             <label htmlFor="employeeId" className="form-label">Employee ID: </label>
                             <input type="number" className="form-control" id="employeeId" name="employeeId" aria-describedby="emailHelp" />
@@ -32,6 +37,9 @@ const EmployeeForm = () => {
                             <input type="text" className="form-control" id="employeeTitle" name="employeeTitle" aria-describedby="emailHelp" />
                         </div>
                         <button type="submit" className="btn btn-primary">Submit New Employee</button>
+                        <Link to="/employees">
+                            <button className="btn btn-danger">Cancel New Employee</button>
+                        </Link>
                     </form>
                 </div>
             </div>
