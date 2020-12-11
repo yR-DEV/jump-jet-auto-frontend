@@ -10,16 +10,21 @@ const JOBCARDS_REST_API_BASEURL ='http://localhost:9000/api/jobcards/jobcard';
 
 class JobCardService{
 
-    getJobCards(){
+    getJobCards () {
         return axios.get(JOBCARDS_REST_API_BASEURL);
     }
 
-    createJobCard(jobcard){
-        return axios.post(JOBCARDS_REST_API_BASEURL,jobcard)
+    createJobCard (jobcard) {
+        return axios.post(JOBCARDS_REST_API_BASEURL, jobcard);
     }
-    deleteJobCard(jobId){
-        return axios.delete(JOBCARDS_REST_API_BASEURL+'/'+jobId)
 
+    deleteJobCard (jobId) {
+        return axios.delete(JOBCARDS_REST_API_BASEURL+'/'+jobId);
+
+    }
+
+    putJobCard (jobcard) {
+        return axios.put(JOBCARDS_REST_API_BASEURL, jobcard);
     }
 }
 //exporting the object of the class so that you can directly use object of the class inside component

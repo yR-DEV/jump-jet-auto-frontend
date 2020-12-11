@@ -18,6 +18,13 @@ const Employee = (props) => {
         });
     }
 
+    const postAPIAxios = (employee) => {
+        axios.post('http://localhost:6064/employee/', employee)
+            .then(response => {
+                console.log('posted');
+            })
+    }
+
     const deleteAPIAxios = (employeeId) => {
         axios.delete(`http://localhost:6064/employee/${employeeId}`)
             .then(response => {
@@ -26,25 +33,10 @@ const Employee = (props) => {
             });
     }
 
+
     const clearState = () => {
         setState([]);
       }
-
-    const showEmployeeForm = () => {
-        console.log('Show New Employee Form Button Clicked');
-    }
-
-    const showEmployeeList = () => {
-
-    }
-
-    const handleAddEmployee = () => {
-        console.log('Add Employee Clicked');
-    }
-
-    const handleManageEmployee = () => {
-
-    }
 
     const handleEmployeeSelect = (id) => {
         props.setEmployeeToAppState(id);

@@ -1,5 +1,8 @@
 import React from 'react';
+import axios from 'axios';
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
+
+import employeeComponent from './Employee';
 
 import './Employee.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -8,6 +11,21 @@ const EmployeeForm = () => {
 
     const handleSubmit = (event) => {
         event.preventDefault();
+        let employee = {
+            employeeId: event.target.employeeId.value,
+            employeeLastName: event.target.employeeLastName.value,
+            employeeFirstName: event.target.employeeFirstName.value,
+            employeePhoneNumnber: event.target.employeePhoneNumber.value,
+            employeeTitle: event.target.employeeTitle.value
+        };
+        postAPIAxios(employee);
+    }
+
+    const postAPIAxios = (employee) => {
+        axios.post('http://localhost:6064/employee/', employee)
+            .then(response => {
+                console.log('posted');
+            })
     }
 
     return (
